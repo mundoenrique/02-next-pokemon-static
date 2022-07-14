@@ -1,7 +1,9 @@
+import { Button } from '@nextui-org/react';
+
 function HomePage(): JSX.Element {
   return (
     <>
-      <h1>Next APP</h1>
+      <Button color="gradient">Next APP</Button>
     </>
   );
 }
