@@ -9,4 +9,5 @@ export interface Ctx {
 
 export interface Params {
   id: string;
+  name: string;
 }
