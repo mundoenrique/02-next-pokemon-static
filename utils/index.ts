@@ -1,1 +1,5 @@
-export { default as localFavorites, existInFavorites } from './localFavorites';
+export {
+  default as localFavorites,
+  existInFavorites,
+  pokemons,
+} from './localFavorites';

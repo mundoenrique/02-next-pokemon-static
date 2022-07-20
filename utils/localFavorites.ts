@@ -22,4 +22,8 @@ function existInFavorites(id: number): boolean {
   return favorites.includes(id);
 }
 
-export { toggleFavorite as default, existInFavorites };
+function pokemons(): number[] {
+  return JSON.parse(localStorage.getItem('favorites') || '[]');
+}
+
+export { toggleFavorite as default, existInFavorites, pokemons };

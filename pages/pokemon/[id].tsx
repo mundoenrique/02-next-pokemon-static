@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import { Button, Card, Container, Grid, Text } from '@nextui-org/react';
+import { Button, Card, Container, Grid, Image, Text } from '@nextui-org/react';
+import confetti from 'canvas-confetti';
+
 import { pokeApi } from '../../api';
 import { Layout } from '../../components/layouts';
 import { Ctx, Pokemon } from '../../interfaces';
@@ -20,6 +21,19 @@ export default function PokemonPage({ pokemon }: Props): JSX.Element {
   const OnToggleFavorite = () => {
     localFavorites(pokemon.id);
     setIsInFavorites(!isInFavorites);
+
+    if (!isInFavorites) {
+      confetti({
+        zIndex: 999,
+        particleCount: 100,
+        spread: 160,
+        angle: -100,
+        origin: {
+          x: 1,
+          y: 0,
+        },
+      });
+    }
   };
 
   return (
