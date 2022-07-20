@@ -16,6 +16,7 @@ export function FavoritePokemons({ pokemons }: Props): JSX.Element {
     </Grid.Container>
   );
 }
+
 /*
 // width arrow function
 export const FavoritePokemons: FC<Props> = ({ pokemons }) => {
