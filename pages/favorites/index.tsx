@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react';
 
 import { Layout } from '../../components/layouts';
 import { NoFavorites } from '../../components/ui';
-import { pokemons } from '../../utils';
-import { FavoritePokemons } from '../../components/pokemon/FavoritePokemons';
+import { localFavorites } from '../../utils';
+import { FavoritePokemons } from '../../components/pokemon';
 
 export default function FavoritePage() {
   const [favoritePokemons, setFavoritePokemons] = useState<number[]>([]);
 
   useEffect(() => {
-    setFavoritePokemons(pokemons());
+    setFavoritePokemons(localFavorites.pokemons());
   }, []);
 
   return (
-    <Layout title="Pokemons Favoritos">
+    <Layout title="Pokémons - Favoritos">
       {favoritePokemons.length === 0 ? (
         <NoFavorites />
       ) : (
@@ -22,3 +22,24 @@ export default function FavoritePage() {
     </Layout>
   );
 }
+
+/*
+// width arrow function
+const FavoritesPage = () => {
+  const [favoritePokemons, setFavoritePokemons] = useState<number[]>([]);
+
+  useEffect(() => {
+    setFavoritePokemons(localFavorites.pokemons());
+  }, []);
+
+  return (
+    <Layout title="Pokémons - Favoritos">
+      {favoritePokemons.length === 0 ? (
+        <NoFavorites />
+      ) : (
+        <FavoritePokemons pokemons={favoritePokemons} />
+      )}
+    </Layout>
+  );
+};
+*/

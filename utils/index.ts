@@ -1,6 +1,2 @@
-export {
-  default as localFavorites,
-  existInFavorites,
-  pokemons,
-} from './localFavorites';
+export { default as localFavorites } from './localFavorites';
 export * from './getPokemonInfo';
